@@ -1,38 +1,24 @@
-
 import java.io.*;
 import java.util.*;
- public class Problem2 {
-	 public static void main(String[] args) throws Exception
-    {
-
-		
+ public class P2 {
+	 public static void main(String[] args) throws Exception{
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-	    String s1=br.readLine();
-	    String s2=br.readLine();
-	    char ch[]=s1.toCharArray();
-	    Set<Character> set=new HashSet<>();
-	    for(int i=0;i<s2.length();i++) {
-	    	set.add(Character.toLowerCase(s2.charAt(i)));
-	    	set.add(Character.toUpperCase(s2.charAt(i)));
-	    	
+	    String s=br.readLine();
+	    String w=br.readLine();
+	    char ch[]=s.toCharArray();
+	    Set<Character> S=new HashSet<>();
+	    for(int i=0;i<w.length();i++) {
+	    	S.add(Character.toLowerCase(w.charAt(i)));
+	    	S.add(Character.toUpperCase(w.charAt(i)));
 	    }
-	    boolean marked[]=new boolean[s1.length()];
-	    for(int i=0;i<s1.length();i++) {
-	    	if(set.contains(ch[i])) {
-	    		marked[i]=true;
-	    	}
+	    boolean marked[]=new boolean[s.length()];
+	    for(int i=0;i<s.length();i++) {
+	    	if(S.contains(ch[i])) marked[i]=true;
 	    }
 	    StringBuilder sb=new StringBuilder();
 	    for(int i=0;i<ch.length;i++) {
-	    	if(!marked[i])
-	    		sb.append(ch[i]);
+	    	if(!marked[i]) sb.append(ch[i]);
 	    }
 	    System.out.println(sb.toString());
-	    
-       
     }
-	 
-	
  }
-
-  
