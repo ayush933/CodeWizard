@@ -7,28 +7,23 @@ import java.util.*;
 		Scanner sc=new Scanner(System.in);
 		int n=sc.nextInt();
 		int a[]=new int[n];
-		for(int i=0;i<n;i++) {
-			a[i]=sc.nextInt();
-		}
-		
+		for(int x=0;x<n;x++) a[x]=sc.nextInt();
 		int sum=sc.nextInt();
-		boolean pos=false;
-		for(int i=0;i<n;i++) {
-			Set<Integer> set=new HashSet<>();
-			int f=sum-a[i];
-			for(int j=i+1;j<n;j++) {
-				int k=f-a[j];
-				if(set.contains(k)) {
-					pos=true;
-					System.out.println(a[i]+" "+a[j]+" "+k);
+		boolean p=false;
+		for(int x=0;x<n;x++) {
+			Set<Integer> s=new HashSet<>();
+			int f=sum-a[x];
+			for(int y=x+1;y<n;y++) {
+				int z=f-a[y];
+				if(s.contains(z)) {
+					p=true;
+					System.out.println(a[x]+" "+a[y]+" "+z);
 					break;
 				}
-				else {
-					set.add(a[j]);
-				}
+				else s.add(a[y]);
 			}
 		}
-		if(pos==false)
+		if(p==false)
 			System.out.println("not found");
 	          
       }
